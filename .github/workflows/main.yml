@@ -1,0 +1,737 @@
+name: CI
+on:
+    schedule:
+    - cron:  '*/90 * * * *'
+    workflow_dispatch:
+env:
+    url1: https://yandex.ru/q/question/lechit_li_osteopatiia_chastye_perepady_2355d7b8/?answer_id=848d5cf1-c060-47f0-94d6-6a0a7f8294b1&utm_medium=share&utm_campaign=answer#848d5cf1-c060-47f0-94d6-6a0a7f8294b1
+    url2: https://yandex.ru/q/article/kak_perevesti_v_iandeks_brauzere_v_rf_na_c019ee78/?utm_medium=share&utm_campaign=article
+    url3: https://yandex.ru/q/question/chto_vam_pomogaet_dobivatsia_svoikh_na_5262b6bd/?answer_id=8a0d591f-c6d2-4a1c-9207-84c99aa0d6d9&utm_medium=share&utm_campaign=answer#8a0d591f-c6d2-4a1c-9207-84c99aa0d6d9
+    url4: https://yandex.ru/q/question/chemu_vas_nauchil_biznes_v_rossii_218070f9/?answer_id=14cd9b3b-e8e0-414d-98f0-b713c2424bee&utm_medium=share&utm_campaign=answer#14cd9b3b-e8e0-414d-98f0-b713c2424bee
+    url5: https://yandex.ru/q/article/kogda_zakroiut_youtube_0f8524fb/?utm_medium=share&utm_campaign=article
+    url6: https://yandex.ru/q/question/kakoi_poleznyi_servis_ili_prilozhenie_vy_bd88defa/
+    url7: https://yandex.ru/q/question/kakie_personalnye_dannye_o_sebe_ia_mogu_a5115832/
+    url8: https://yandex.ru/q/question/kak_ubeditsia_chto_so_mnoi_po_telefonu_f78bcd56/?answer_id=37754709-0351-48b2-b1c4-b17a1c3558ef&utm_medium=share&utm_campaign=answer#37754709-0351-48b2-b1c4-b17a1c3558ef
+    url9: https://yandex.ru/q/question/pochemu_rakety_chashche_letiat_a_ne_26dbab0f/
+    url10: https://yandex.ru/q/question/pravda_li_chto_koshki_nauchilis_miaukat_s_b3a24004/
+    url11: https://yandex.ru/q/question/kuda_investirovat_million_rublei_34e3dd47/?answer_id=0c25d1b7-2e1b-4c4d-991e-5cb25c7fc8eb&utm_medium=share&utm_campaign=answer#0c25d1b7-2e1b-4c4d-991e-5cb25c7fc8eb
+    url12: https://yandex.ru/q/question/kakie_neobychnye_professii_vy_znaete_4d7a3434/?answer_id=65d98539-0012-4f32-bc94-3296c0c1113b&utm_medium=share&utm_campaign=answer#65d98539-0012-4f32-bc94-3296c0c1113b
+    url13: https://yandex.ru/q/question/kak_vy_ponimaete_chto_takoe_argument_k_ad_6aba2861/
+    url14: https://yandex.ru/q/question/chto_samoe_neveroiatnoe_vy_videli_v_svoei_ad656594/?answer_id=d6df78ed-b1a4-416a-becd-3684bf19c674&utm_medium=share&utm_campaign=answer#d6df78ed-b1a4-416a-becd-3684bf19c674
+    url15: https://yandex.ru/q/question/pravda_li_chto_koshki_nauchilis_miaukat_s_b3a24004/?answer_id=101a81c7-4b5f-4a64-8287-0e55a93b0802&utm_medium=share&utm_campaign=answer#101a81c7-4b5f-4a64-8287-0e55a93b0802
+    url16: https://yandex.ru/q/question/samaia_vkusnaia_ili_neobychnaia_eda_vy_057b3c36/
+    url17: https://yandex.ru/q/question/pochemu_liudiam_tak_legko_promyt_mozgi_aad24eaf/
+    url18: https://yandex.ru/q/question/kak_bystro_zapomnit_mnogo_informatsii_50f80713/
+    url19: https://yandex.ru/q/question/kakoi_poleznyi_servis_ili_prilozhenie_vy_bd88defa/?answer_id=750a4e28-1e6b-4959-8f47-715a0604d00f&utm_medium=share&utm_campaign=answer#750a4e28-1e6b-4959-8f47-715a0604d00f
+    url20: https://yandex.ru/q/question/pochemu_poiavliaetsia_sostoianie_eiforii_f4904f04/?answer_id=24ab3cfd-2a3e-4e52-ab9e-a42693436879&utm_medium=share&utm_campaign=answer#24ab3cfd-2a3e-4e52-ab9e-a42693436879
+    url21: https://yandex.ru/q/question/kuda_ne_stoit_vkladyvat_dengi_698c6773/?answer_id=f99993e8-98ee-4c7a-94ee-ca01708fdabd&utm_medium=share&utm_campaign=answer#f99993e8-98ee-4c7a-94ee-ca01708fdabd
+    url22: https://yandex.ru/q/question/chto_takoe_shovinizm_stalkivalis_li_vy_s_edf0141c/
+    url23: https://yandex.ru/q/question/sluchalas_li_s_vami_situatsiia_ulovka_22_5e3e631b/
+    url24: https://yandex.ru/q/question/kuda_investirovat_million_rublei_34e3dd47/?answer_id=13ac7050-654f-4522-8206-f343afc57735&utm_medium=share&utm_campaign=answer#13ac7050-654f-4522-8206-f343afc57735
+    url25: https://yandex.ru/q/question/pochemu_poiavliaetsia_sostoianie_eiforii_f4904f04/?answer_id=5090a7d4-749c-44a1-acd1-ac541cb97305&utm_medium=share&utm_campaign=answer#5090a7d4-749c-44a1-acd1-ac541cb97305
+    url26: https://yandex.ru/q/question/pochemu_poiavliaetsia_sostoianie_eiforii_f4904f04/
+    url27: https://yandex.ru/q/question/pravda_li_chto_koshki_nauchilis_miaukat_s_b3a24004/?answer_id=6d8a49ec-bf0a-4648-a5a4-ef84e8dcfc45&utm_medium=share&utm_campaign=answer#6d8a49ec-bf0a-4648-a5a4-ef84e8dcfc45
+    url28: https://yandex.ru/q/question/samaia_vkusnaia_ili_neobychnaia_eda_vy_057b3c36/?answer_id=ae68b0cf-ad1b-4653-8841-10c9f35e29c9&utm_medium=share&utm_campaign=answer#ae68b0cf-ad1b-4653-8841-10c9f35e29c9
+    url29: https://yandex.ru/q/question/za_chto_vam_udaliali_voprosy_ili_akkaunt_11fc0a74/
+    url30: https://yandex.ru/q/question/psikhologiia_donatera_na_strimakh_pro_i_e82b305c/
+    url31: https://yandex.ru/q/question/chto_samoe_neveroiatnoe_vy_videli_v_svoei_ad656594/?answer_id=1f268d72-7edb-4ae8-a6f3-ad0ec39be3af&utm_medium=share&utm_campaign=answer#1f268d72-7edb-4ae8-a6f3-ad0ec39be3af
+    url32: https://yandex.ru/q/question/pravda_li_chto_sbor_dnk_v_biobank_uzhe_ae4524ae/
+    url33: https://yandex.ru/q/question/pochemu_proiskhodit_to_o_chem_sluchaino_9272a201/?answer_id=27e22862-7646-46f8-b1f3-6eb754862437&utm_medium=share&utm_campaign=answer#27e22862-7646-46f8-b1f3-6eb754862437
+    url34: https://yandex.ru/q/article/chto_vy_ispolzuete_dlia_menedzhmenta_999f8f5a/?utm_medium=share&utm_campaign=article
+    url35: https://yandex.ru/q/question/chto_takoe_svobodnoe_po_i_zachem_ego_ffc9be86/?answer_id=8d7bd5ec-8ffc-4c3a-b982-a7c3730b5db5&utm_medium=share&utm_campaign=answer#8d7bd5ec-8ffc-4c3a-b982-a7c3730b5db5
+    url36: https://yandex.ru/q/question/kakie_neobychnye_professii_vy_znaete_4d7a3434/?answer_id=65d98539-0012-4f32-bc94-3296c0c1113b&utm_medium=share&utm_campaign=answer#65d98539-0012-4f32-bc94-3296c0c1113b
+    url37: https://yandex.ru/q/question/pravda_li_chto_chelovek_eto_edinstvennoe_88425428/?answer_id=448ff5b9-fa7c-4ebb-9b05-29ee04b7a086&utm_medium=share&utm_campaign=answer#448ff5b9-fa7c-4ebb-9b05-29ee04b7a086
+    url38: https://yandex.ru/q/question/chto_takoe_svobodnoe_po_i_zachem_ego_ffc9be86/
+    url39: https://yandex.ru/q/question/top_5_poleznykh_kursov_kotorye_izuchit_95ea4305/?answer_id=5fdeb00d-e569-4af8-8ddc-4610e8821058&utm_medium=share&utm_campaign=answer#5fdeb00d-e569-4af8-8ddc-4610e8821058
+    url40: https://yandex.ru/q/question/pochemu_ne_razdavlivaet_pervye_etazhi_v_b6170c6b/
+    url41: https://yandex.ru/q/question/v_chem_slozhnost_legalizatsii_v_rossii_12b79ccb/
+    url42: https://yandex.ru/q/question/pochemu_ne_razdavlivaet_pervye_etazhi_v_b6170c6b/?answer_id=544ca75b-3a54-4661-afc6-832fb901a4e2&utm_medium=share&utm_campaign=answer#544ca75b-3a54-4661-afc6-832fb901a4e2
+    url43: https://yandex.ru/q/question/kak_ubedit_cheloveka_chto_depressii_ne_1e68ee10/?answer_id=68e9f719-125b-449c-b923-a354df948cc5&utm_medium=share&utm_campaign=answer#68e9f719-125b-449c-b923-a354df948cc5
+    url44: https://yandex.ru/q/question/kakie_u_vas_est_spetsificheskie_vidy_ili_058a22ac/
+    url45: https://yandex.ru/q/question/chto_samoe_neveroiatnoe_vy_videli_v_svoei_ad656594/?answer_id=78c7cba3-a79a-45df-95e9-36f104a53783&utm_medium=share&utm_campaign=answer#78c7cba3-a79a-45df-95e9-36f104a53783
+    url46: https://yandex.ru/q/question/top_5_poleznykh_kursov_kotorye_izuchit_95ea4305/
+    url47: https://yandex.ru/q/question/primeniaetsia_li_gdpr_k_moim_personalnym_de1b9816/
+    url48: https://yandex.ru/q/question/pochemu_liudiam_tak_legko_promyt_mozgi_aad24eaf/?answer_id=7f43847a-ce6d-445f-bbbf-120fd181d75a&utm_medium=share&utm_campaign=answer#7f43847a-ce6d-445f-bbbf-120fd181d75a
+    url49: https://yandex.ru/q/question/chto_samoe_neveroiatnoe_vy_videli_v_svoei_ad656594/?answer_id=0d13dc29-a053-4546-8992-1a4e3ec981fc&utm_medium=share&utm_campaign=answer#0d13dc29-a053-4546-8992-1a4e3ec981fc
+    url50: https://yandex.ru/q/question/pravda_li_chto_chelovek_eto_edinstvennoe_88425428/
+    url51: https://yandex.ru/q/question/psikhologiia_donatera_na_strimakh_pro_i_e82b305c/?answer_id=b3df5331-aa6b-4e08-a5c3-3cf8bd06fe0b&utm_medium=share&utm_campaign=answer#b3df5331-aa6b-4e08-a5c3-3cf8bd06fe0b
+    url52: https://yandex.ru/q/question/kakie_neobychnye_professii_vy_znaete_4d7a3434/?answer_id=5541068b-6e0f-44c8-9444-7e89fc53f0e7&utm_medium=share&utm_campaign=answer#5541068b-6e0f-44c8-9444-7e89fc53f0e7
+    url53: https://yandex.ru/q/question/kuda_investirovat_million_rublei_34e3dd47/?answer_id=60523ccf-274d-4dea-b9ae-a83170cdc9b1&utm_medium=share&utm_campaign=answer#60523ccf-274d-4dea-b9ae-a83170cdc9b1
+    url54: https://yandex.ru/q/question/kakoi_vpn_luchshe_vsego_ispolzovat_5bbd45ed/
+    url55: https://yandex.ru/q/question/kakoi_poleznyi_servis_ili_prilozhenie_vy_bd88defa/?answer_id=2a98715c-186c-4b67-b791-672f71e830a4&utm_medium=share&utm_campaign=answer#2a98715c-186c-4b67-b791-672f71e830a4
+    url56: https://yandex.ru/q/question/kak_bystro_zapomnit_mnogo_informatsii_50f80713/?answer_id=85b597d9-8a63-4dad-a3d0-850e04b77bc4&utm_medium=share&utm_campaign=answer#85b597d9-8a63-4dad-a3d0-850e04b77bc4
+    url57: https://yandex.ru/q/question/chemu_vas_nauchil_biznes_v_rossii_218070f9/?answer_id=f996aa2f-87d5-4001-b30b-8b24e2f5d47b&utm_medium=share&utm_campaign=answer#f996aa2f-87d5-4001-b30b-8b24e2f5d47b
+    url58: https://yandex.ru/q/question/top_5_zavedenii_sankt_peterburga_b299b3da/?answer_id=32f797f3-7b37-46d1-a407-05584beee116&utm_medium=share&utm_campaign=answer#32f797f3-7b37-46d1-a407-05584beee116
+    url59: https://yandex.ru/q/question/kak_ubeditsia_chto_so_mnoi_po_telefonu_f78bcd56/
+    url60: https://yandex.ru/q/question/chto_samoe_neveroiatnoe_vy_videli_v_svoei_ad656594/
+    url61: https://yandex.ru/q/question/kuda_investirovat_million_rublei_34e3dd47/
+    url62: https://yandex.ru/q/question/top_5_poleznykh_kursov_kotorye_izuchit_95ea4305/?answer_id=846f4b06-cb8f-4a71-9320-82fa74daf45f&utm_medium=share&utm_campaign=answer#846f4b06-cb8f-4a71-9320-82fa74daf45f
+    url63: https://yandex.ru/q/question/kuda_investirovat_million_rublei_34e3dd47/?answer_id=8bd05301-c328-45c4-93d7-c8be202c15a9&utm_medium=share&utm_campaign=answer#8bd05301-c328-45c4-93d7-c8be202c15a9
+    url64: https://yandex.ru/q/question/chemu_vas_nauchil_biznes_v_rossii_218070f9/
+    url65: https://yandex.ru/q/question/kak_bystro_zapomnit_mnogo_informatsii_50f80713/?answer_id=d759a0ed-ee7c-4b8a-9bec-e9fa342a2803&utm_medium=share&utm_campaign=answer#d759a0ed-ee7c-4b8a-9bec-e9fa342a2803
+    url66: https://yandex.ru/q/question/kakoi_vpn_luchshe_vsego_ispolzovat_5bbd45ed/?answer_id=fa1fb9e4-54d5-4ead-a755-de4413cb47b1&utm_medium=share&utm_campaign=answer#fa1fb9e4-54d5-4ead-a755-de4413cb47b1
+    url67: https://yandex.ru/q/question/kuda_ne_stoit_vkladyvat_dengi_698c6773/?answer_id=64bf8744-d814-4328-964a-ed3e98704544&utm_medium=share&utm_campaign=answer#64bf8744-d814-4328-964a-ed3e98704544
+    url68: https://yandex.ru/q/question/chemu_vas_nauchil_biznes_v_rossii_218070f9/?answer_id=58683c0b-00fb-4bc7-b2f9-cba6c1e21722&utm_medium=share&utm_campaign=answer#58683c0b-00fb-4bc7-b2f9-cba6c1e21722
+    url69: https://yandex.ru/q/question/lechit_li_osteopatiia_chastye_perepady_2355d7b8/?answer_id=8ef835d5-c65c-4012-aa48-e3df89ecac56&utm_medium=share&utm_campaign=answer#8ef835d5-c65c-4012-aa48-e3df89ecac56
+    url70: https://yandex.ru/q/question/kuda_ne_stoit_vkladyvat_dengi_698c6773/?answer_id=f7326e7a-80f2-48ad-9673-2516dcaef7a9&utm_medium=share&utm_campaign=answer#f7326e7a-80f2-48ad-9673-2516dcaef7a9
+    url71: https://yandex.ru/q/question/samyi_slozhnyi_vopros_v_vashei_zhizni_43e4ed59/?answer_id=722c455d-2460-4759-95c8-f076db165dc4&utm_medium=share&utm_campaign=answer#722c455d-2460-4759-95c8-f076db165dc4
+    url72: https://yandex.ru/q/question/chto_vam_pomogaet_dobivatsia_svoikh_na_5262b6bd/
+    url73: https://yandex.ru/q/question/izmeniaetsia_li_seriia_i_nomer_pasporta_7b69634c/
+    url74: https://yandex.ru/q/question/golosa_i_obrazy_v_golove_v_moment_otkuda_3ba0d475/?answer_id=595f44e7-dbee-45ec-a3d5-9403d17bab48&utm_medium=share&utm_campaign=answer#595f44e7-dbee-45ec-a3d5-9403d17bab48
+    url75: https://yandex.ru/q/question/kakie_u_vas_est_spetsificheskie_vidy_ili_058a22ac/?answer_id=f4bedc8e-4a31-4609-9b8d-72f9c47a2267&utm_medium=share&utm_campaign=answer#f4bedc8e-4a31-4609-9b8d-72f9c47a2267
+    url76: https://yandex.ru/q/question/golosa_i_obrazy_v_golove_v_moment_otkuda_3ba0d475/?answer_id=103ff1d7-3e50-4932-a68e-fd21a7cb9375&utm_medium=share&utm_campaign=answer#103ff1d7-3e50-4932-a68e-fd21a7cb9375
+    url77: https://yandex.ru/q/question/kak_ubedit_cheloveka_chto_depressii_ne_1e68ee10/?answer_id=e40252bf-856a-42b6-95eb-0a7e4f2e23de&utm_medium=share&utm_campaign=answer#e40252bf-856a-42b6-95eb-0a7e4f2e23de
+    url78: https://yandex.ru/q/question/kak_ubedit_cheloveka_chto_depressii_ne_1e68ee10/
+    url79: https://yandex.ru/q/question/samyi_slozhnyi_vopros_v_vashei_zhizni_43e4ed59/
+    url80: https://yandex.ru/q/question/kuda_ne_stoit_vkladyvat_dengi_698c6773/
+    url81: https://yandex.ru/q/question/chto_samoe_neveroiatnoe_vy_videli_v_svoei_ad656594/?answer_id=4b11f14c-9e9c-4fdc-adf5-58edc35b372c&utm_medium=share&utm_campaign=answer#4b11f14c-9e9c-4fdc-adf5-58edc35b372c
+    url82: https://yandex.ru/q/question/pravda_li_chto_koshki_nauchilis_miaukat_s_b3a24004/?answer_id=23b4b505-e806-42b0-a0d0-201ab7fec535&utm_medium=share&utm_campaign=answer#23b4b505-e806-42b0-a0d0-201ab7fec535
+    url83: https://yandex.ru/q/question/mozhno_li_sfotografirovat_b3160cfd/
+    url84: https://yandex.ru/q/question/pravda_li_chto_koshki_nauchilis_miaukat_s_b3a24004/?answer_id=b85062da-6d73-4291-b85f-3b277276ebfe&utm_medium=share&utm_campaign=answer#b85062da-6d73-4291-b85f-3b277276ebfe
+    url85: https://yandex.ru/q/question/kuda_ne_stoit_vkladyvat_dengi_698c6773/?answer_id=19765238-e221-42b0-b959-4e69da9a8b3d&utm_medium=share&utm_campaign=answer#19765238-e221-42b0-b959-4e69da9a8b3d
+    url86: https://yandex.ru/q/question/top_5_zavedenii_sankt_peterburga_b299b3da/?answer_id=edaa5a47-fb7f-42a0-9f16-cf8abe156c7d&utm_medium=share&utm_campaign=answer#edaa5a47-fb7f-42a0-9f16-cf8abe156c7d
+    url87: https://yandex.ru/q/question/kakie_u_vas_est_spetsificheskie_vidy_ili_058a22ac/?answer_id=3df28aaa-0175-43a8-83f1-5eb64abe5611&utm_medium=share&utm_campaign=answer#3df28aaa-0175-43a8-83f1-5eb64abe5611
+    url88: https://yandex.ru/q/question/v_chem_slozhnost_legalizatsii_v_rossii_12b79ccb/?answer_id=12638334-e879-48dc-b29a-20bdcbac30b6&utm_medium=share&utm_campaign=answer#12638334-e879-48dc-b29a-20bdcbac30b6
+    url89: https://yandex.ru/q/question/kak_ubeditsia_chto_so_mnoi_po_telefonu_f78bcd56/?answer_id=24356fff-0655-4b1e-ab39-1b462da560c8&utm_medium=share&utm_campaign=answer#24356fff-0655-4b1e-ab39-1b462da560c8
+    url90: https://yandex.ru/q/question/chto_samoe_neveroiatnoe_vy_videli_v_svoei_ad656594/?answer_id=487e5e47-9e45-4074-80ea-8ac7c376d854&utm_medium=share&utm_campaign=answer#487e5e47-9e45-4074-80ea-8ac7c376d854
+    url91: https://yandex.ru/q/question/kakie_neobychnye_professii_vy_znaete_4d7a3434/
+    url92: https://yandex.ru/q/question/lechit_li_osteopatiia_chastye_perepady_2355d7b8/
+    url93: https://yandex.ru/q/question/kakie_neobychnye_professii_vy_znaete_4d7a3434/?answer_id=40454848-2f59-4dfa-87eb-2b6dd3c57113&utm_medium=share&utm_campaign=answer#40454848-2f59-4dfa-87eb-2b6dd3c57113
+    url94: https://yandex.ru/q/question/pochemu_proiskhodit_to_o_chem_sluchaino_9272a201/
+    url95: https://yandex.ru/q/question/chto_samoe_neveroiatnoe_vy_videli_v_svoei_ad656594/?answer_id=9efced10-4af5-49a7-8ebc-8b30e3c0a3b5&utm_medium=share&utm_campaign=answer#9efced10-4af5-49a7-8ebc-8b30e3c0a3b5
+    url96: https://yandex.ru/q/question/golosa_i_obrazy_v_golove_v_moment_otkuda_3ba0d475/
+    url97: https://yandex.ru/q/question/top_5_zavedenii_sankt_peterburga_b299b3da/
+    url98: https://yandex.ru/q/question/mozhno_li_sfotografirovat_b3160cfd/?answer_id=a2d9e519-321b-4686-93d8-ed60a17ac3ac&utm_medium=share&utm_campaign=answer#a2d9e519-321b-4686-93d8-ed60a17ac3ac
+    url99: https://yandex.ru/q/question/pochemu_poiavliaetsia_sostoianie_eiforii_f4904f04/?answer_id=c589d733-87c7-41f8-ab99-d595797d6ffc&utm_medium=share&utm_campaign=answer#c589d733-87c7-41f8-ab99-d595797d6ffc
+    url100: https://yandex.ru/q/question/chto_takoe_dusha_5f98918e/?utm_medium=share&utm_campaign=question
+    url101: https://yandex.ru/q/question/chto_takoe_dusha_5f98918e/?answer_id=18a6d697-0b1a-4765-8c5a-e2bdd39bea85&utm_medium=share&utm_campaign=answer#18a6d697-0b1a-4765-8c5a-e2bdd39bea85
+    url102: https://yandex.ru/q/question/kakie_est_proverennye_blagotvoritelnye_s_a029d892/?utm_medium=share&utm_campaign=question
+    url103: https://yandex.ru/q/question/chto_takoe_reskripting_i_kak_on_rabotaet_18146481/?utm_medium=share&utm_campaign=question
+    url104: https://yandex.ru/q/question/chto_takoe_reskripting_i_kak_on_rabotaet_18146481/?answer_id=f64a1056-003c-4a3d-bda4-8b4e7cf99dd1&utm_medium=share&utm_campaign=answer#f64a1056-003c-4a3d-bda4-8b4e7cf99dd1
+jobs:
+    screenshot-scheduler:
+        runs-on: ubuntu-latest
+        steps:
+            - name: step_1
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url1}}
+                destination: 1.jpg
+                width: 1
+            - name: step_2
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url2}}
+                destination: 2.jpg
+                width: 1
+            - name: step_3
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url3}}
+                destination: 3.jpg
+                width: 1
+            - name: step_4
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url4}}
+                destination: 4.jpg
+                width: 1
+            - name: step_5
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url5}}
+                destination: 5.jpg
+                width: 1
+            - name: step_6
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url6}}
+                destination: 6.jpg
+                width: 1
+            - name: step_7
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url7}}
+                destination: 7.jpg
+                width: 1
+            - name: step_8
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url8}}
+                destination: 8.jpg
+                width: 1
+            - name: step_9
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url9}}
+                destination: 9.jpg
+                width: 1
+            - name: step_10
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url10}}
+                destination: 10.jpg
+                width: 1
+            - name: step_11
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url11}}
+                destination: 11.jpg
+                width: 1
+            - name: step_12
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url12}}
+                destination: 12.jpg
+                width: 1
+            - name: step_13
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url13}}
+                destination: 13.jpg
+                width: 1
+            - name: step_14
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url14}}
+                destination: 14.jpg
+                width: 1
+            - name: step_15
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url15}}
+                destination: 15.jpg
+                width: 1
+            - name: step_16
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url16}}
+                destination: 16.jpg
+                width: 1
+            - name: step_17
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url17}}
+                destination: 17.jpg
+                width: 1
+            - name: step_18
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url18}}
+                destination: 18.jpg
+                width: 1
+            - name: step_19
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url19}}
+                destination: 19.jpg
+                width: 1
+            - name: step_20
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url20}}
+                destination: 20.jpg
+                width: 1
+            - name: step_21
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url21}}
+                destination: 21.jpg
+                width: 1
+            - name: step_22
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url22}}
+                destination: 22.jpg
+                width: 1
+            - name: step_23
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url23}}
+                destination: 23.jpg
+                width: 1
+            - name: step_24
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url24}}
+                destination: 24.jpg
+                width: 1
+            - name: step_25
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url25}}
+                destination: 25.jpg
+                width: 1
+            - name: step_26
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url26}}
+                destination: 26.jpg
+                width: 1
+            - name: step_27
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url27}}
+                destination: 27.jpg
+                width: 1
+            - name: step_28
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url28}}
+                destination: 28.jpg
+                width: 1
+            - name: step_29
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url29}}
+                destination: 29.jpg
+                width: 1
+            - name: step_30
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url30}}
+                destination: 30.jpg
+                width: 1
+            - name: step_31
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url31}}
+                destination: 31.jpg
+                width: 1
+            - name: step_32
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url32}}
+                destination: 32.jpg
+                width: 1
+            - name: step_33
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url33}}
+                destination: 33.jpg
+                width: 1
+            - name: step_34
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url34}}
+                destination: 34.jpg
+                width: 1
+            - name: step_35
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url35}}
+                destination: 35.jpg
+                width: 1
+            - name: step_36
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url36}}
+                destination: 36.jpg
+                width: 1
+            - name: step_37
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url37}}
+                destination: 37.jpg
+                width: 1
+            - name: step_38
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url38}}
+                destination: 38.jpg
+                width: 1
+            - name: step_39
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url39}}
+                destination: 39.jpg
+            - name: step_40
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url40}}
+                destination: 40.jpg
+                width: 1
+            - name: step_41
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url41}}
+                destination: 41.jpg
+                width: 1
+            - name: step_42
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url42}}
+                destination: 42.jpg
+                width: 1
+            - name: step_43
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url43}}
+                destination: 43.jpg
+                width: 1
+            - name: step_44
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url44}}
+                destination: 44.jpg
+                width: 1
+            - name: step_45
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url45}}
+                destination: 45.jpg
+                width: 1
+            - name: step_46
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url46}}
+                destination: 46.jpg
+                width: 1
+            - name: step_47
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url47}}
+                destination: 47.jpg
+                width: 1
+            - name: step_48
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url48}}
+                destination: 48.jpg
+                width: 1
+            - name: step_49
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url49}}
+                destination: 49.jpg
+                width: 1
+            - name: step_50
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url50}}
+                destination: 50.jpg
+                width: 1
+            - name: step_51
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url51}}
+                destination: 51.jpg
+                width: 1
+            - name: step_52
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url52}}
+                destination: 52.jpg
+                width: 1
+            - name: step_53
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url53}}
+                destination: 53.jpg
+                width: 1
+            - name: step_54
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url54}}
+                destination: 54.jpg
+                width: 1
+            - name: step_55
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url55}}
+                destination: 55.jpg
+                width: 1
+            - name: step_56
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url56}}
+                destination: 56.jpg
+                width: 1
+            - name: step_57
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url57}}
+                destination: 57.jpg
+                width: 1
+            - name: step_58
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url58}}
+                destination: 58.jpg
+                width: 1
+            - name: step_59
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url59}}
+                destination: 59.jpg
+                width: 1
+            - name: step_60
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url60}}
+                destination: 60.jpg
+                width: 1
+            - name: step_61
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url61}}
+                destination: 61.jpg
+                width: 1
+            - name: step_62
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url62}}
+                destination: 62.jpg
+                width: 1
+            - name: step_63
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url63}}
+                destination: 63.jpg
+                width: 1
+            - name: step_64
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url64}}
+                destination: 64.jpg
+                width: 1
+            - name: step_65
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url65}}
+                destination: 65.jpg
+                width: 1
+            - name: step_66
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url66}}
+                destination: 66.jpg
+                width: 1
+            - name: step_67
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url67}}
+                destination: 67.jpg
+                width: 1
+            - name: step_68
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url68}}
+                destination: 68.jpg
+                width: 1
+            - name: step_69
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url69}}
+                destination: 69.jpg
+                width: 1
+            - name: step_70
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url70}}
+                destination: 70.jpg
+                width: 1
+            - name: step_71
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url71}}
+                destination: 71.jpg
+                width: 1
+            - name: step_72
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url72}}
+                destination: 72.jpg
+                width: 1
+            - name: step_73
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url73}}
+                destination: 73.jpg
+                width: 1
+            - name: step_74
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url74}}
+                destination: 74.jpg
+                width: 1
+            - name: step_75
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url75}}
+                destination: 75.jpg
+                width: 1
+            - name: step_76
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url76}}
+                destination: 76.jpg
+                width: 1
+            - name: step_77
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url77}}
+                destination: 77.jpg
+                width: 1
+            - name: step_78
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url78}}
+                destination: 78.jpg
+                width: 1
+            - name: step_79
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url79}}
+                destination: 79.jpg
+                width: 1
+            - name: step_80
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url80}}
+                destination: 80.jpg
+                width: 1
+            - name: step_81
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url81}}
+                destination: 81.jpg
+                width: 1
+            - name: step_82
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url82}}
+                destination: 82.jpg
+                width: 1
+            - name: step_83
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url83}}
+                destination: 83.jpg
+                width: 1
+            - name: step_84
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url84}}
+                destination: 84.jpg
+                width: 1
+            - name: step_85
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url85}}
+                destination: 85.jpg
+                width: 1
+            - name: step_86
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url86}}
+                destination: 86.jpg
+                width: 1
+            - name: step_87
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url87}}
+                destination: 87.jpg
+                width: 1
+            - name: step_88
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url88}}
+                destination: 88.jpg
+                width: 1
+            - name: step_89
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url89}}
+                destination: 89.jpg
+                width: 1
+            - name: step_90
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url90}}
+                destination: 90.jpg
+                width: 1
+            - name: step_91
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url91}}
+                destination: 91.jpg
+                width: 1
+            - name: step_92
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url92}}
+                destination: 92.jpg
+                width: 1
+            - name: step_93
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url93}}
+                destination: 93.jpg
+                width: 1
+            - name: step_94
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url94}}
+                destination: 94.jpg
+                width: 1
+            - name: step_95
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url95}}
+                destination: 95.jpg
+                width: 1
+            - name: step_96
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url96}}
+                destination: 96.jpg
+                width: 1
+            - name: step_97
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url97}}
+                destination: 97.jpg
+                width: 1
+            - name: step_98
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url98}}
+                destination: 98.jpg
+                width: 1
+            - name: step_99
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url99}}
+                destination: 99.jpg
+                width: 1
+            - name: step_100
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url100}}
+                destination: 100.jpg
+                width: 1
+            - name: step_101
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url101}}
+                destination: 101.jpg
+                width: 1
+            - name: step_102
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url102}}
+                destination: 102.jpg
+                width: 1
+            - name: step_103
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url103}}
+                destination: 103.jpg
+                width: 1
+            - name: step_104
+                uses: swinton/screenshot-website@v1.x
+                with:
+                source: ${{env.url104}}
+                destination: 104.jpg
+                width: 1
